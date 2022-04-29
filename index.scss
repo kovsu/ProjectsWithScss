@@ -1,0 +1,8 @@
+@import "_global";
+
+/* 使用变量 */
+body {
+  background-color: $bg_color;
+  color: $text_color;
+  font-size: $font_size;
+}
