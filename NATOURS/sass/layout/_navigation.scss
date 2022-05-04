@@ -1,5 +1,4 @@
 .navigation {
-
   &__checkbox {
     display: none;
   }
@@ -16,6 +15,16 @@
     z-index: 30;
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__background {
@@ -32,6 +41,16 @@
     // transform: scale(80);
     z-index: 10;
     transition: all 0.8s ease-in-out;
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 4rem;
+      right: 4rem;
+    }
   }
 
   &__nav {
@@ -44,7 +63,7 @@
     // z-index: 20;
     z-index: -1;
     opacity: 0;
-    transition: all 0.6s cubic-bezier(.75,0,.25,1);
+    transition: all 0.6s cubic-bezier(0.75, 0, 0.25, 1);
   }
 
   &__list {
@@ -76,7 +95,7 @@
         transparent 50%,
         $color-white 50%
       );
-      background-size: 220%;
+      background-size: 280%;
       transition: all 0.4s ease-in-out;
     }
 
@@ -105,7 +124,6 @@
   &__icon {
     position: relative;
     margin-top: 3.5rem;
-    
 
     &,
     &::before,
@@ -113,7 +131,7 @@
       display: inline-block;
       width: 3rem;
       height: 2px;
-      background-color: $color-grey-dark; 
+      background-color: $color-grey-dark;
     }
 
     &::before {
@@ -134,7 +152,7 @@
       transition: all 0.2s;
     }
   }
-  
+
   &__button:hover &__icon::before {
     top: -1rem;
   }
@@ -156,8 +174,4 @@
     top: 0;
     transform: rotateZ(-135deg);
   }
-
-
-
-
 }

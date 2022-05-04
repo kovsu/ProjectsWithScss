@@ -1,5 +1,11 @@
 .row {
-  max-width: 114rem;
+  max-width: $grid-width;
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
   margin: 0 auto;
 
   @include clearfix;
@@ -7,6 +13,10 @@
   // :not(伪类) 除去这个伪类，其他所有都设置这个样式
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   // 所有以 col- 开头的类
@@ -17,6 +27,15 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
 

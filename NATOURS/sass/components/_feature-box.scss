@@ -7,6 +7,10 @@
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
   transition: transform 0.3s ease-in-out;
 
+  @include respond(tab-port) {
+    padding: 2rem; 
+  }
+
   &:hover {
     transform: translateY(-1.5rem) scale(1.03);
   }
@@ -22,6 +26,11 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+
+    @include respond(tab-port) {
+      margin-bottom: 0;
+      font-size: 5rem;
+    }
   }
   
 }

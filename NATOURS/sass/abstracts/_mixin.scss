@@ -5,3 +5,49 @@
     clear: both;
   }
 }
+
+// MEDIUM QUERY MANAGER
+/*
+  0 - 600px Phone
+  600 - 900px Tablet portrait(平板竖着)
+  900 - 1200px Tablet landscape(平板横着)
+  [1200 - 1800px] is where our normal styles apply
+  1800px + Big desktop
+
+  $breakpoint arg choices
+  - phone
+  - tab-port
+  - tab-land
+  - big-des
+
+  em和rem单位在HTML中不应受font-size的变化影响，因为他们是基于浏览器内部的font-size属性
+  1em = 16px
+
+  添加 medium query 的顺序： Base + typography > general layout + grid > page layout > components
+
+  */
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-des {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
