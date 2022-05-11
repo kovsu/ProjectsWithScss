@@ -2,4 +2,57 @@
   background-color: $color-primary;
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1 / -1;
+    grid-row: 1 / span 1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  display: flex;
+  justify-content: center;
+  // text-align: center;
+}
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  display: block;
+  // margin: 3rem auto;
+  margin-top: 4.5rem;
+
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+
+  @media only screen and (max-width: $bp-large) {
+    margin-top: 0;
+    margin-right: 3rem;
+
+    &::before {
+      transform: translateY(-1.2rem);
+    }
+  
+    &::after {
+      transform: translateY(1rem);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 4.5rem;
+    background-color: #fff;
+  }
+
+  &::before {
+    transform: translateY(-1.3rem);
+  }
+
+  &::after {
+    transform: translateY(1.3rem);
+  }
 }
